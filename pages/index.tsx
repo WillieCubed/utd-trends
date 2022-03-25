@@ -6,6 +6,7 @@ import { Wave2SVG } from '../components/common/wave2SVG';
 import { FlatLogoIcon } from '../components/common/flatLogoIcon';
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
+import {useRouter} from "next/router";
 
 interface Film {
   title: string;
@@ -17,8 +18,11 @@ interface Film {
 const Home: NextPage = () => {
   const [value, setValue] = useState<Film[] | undefined>([]);
 
-  function searchOptionChosen(chosenOption: any) {
+  const router = useRouter();
+
+  function searchOptionChosen(chosenOption: string) {
     console.log('The option chosen was: ', chosenOption);
+    router.push("/dashboard?first_term=" + encodeURIComponent(chosenOption));
   }
 
   return (
