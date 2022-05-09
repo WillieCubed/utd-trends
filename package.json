@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:styleguide": "styleguidist server",
     "build": "next build",
+    "build:styleguide": "styleguidist build",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
